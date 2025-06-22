@@ -12,10 +12,19 @@
 将 `your-username` 替换为您的GitHub用户名，`your-repo-name` 替换为仓库名称。
 
 ### 2. 启用GitHub Pages
+
+#### 方法一（推荐）：使用GitHub Actions
 1. 打开您的GitHub仓库
 2. 点击 **Settings** 标签页
 3. 在左侧菜单中找到 **Pages**
 4. 在 **Source** 下选择 **GitHub Actions**
+
+#### 方法二（如果方法一失败）：使用gh-pages分支
+1. 删除或重命名 `.github/workflows/deploy.yml`
+2. 将 `.github/workflows/deploy-simple.yml` 重命名为 `deploy.yml`
+3. 在仓库 **Settings** → **Pages** 中
+4. **Source** 选择 **Deploy from a branch**
+5. **Branch** 选择 **gh-pages** / **/ (root)**
 
 ### 3. 推送代码触发部署
 ```bash
@@ -44,11 +53,35 @@ GitHub Actions工作流（`.github/workflows/deploy.yml`）包含：
 4. **项目构建** - 运行 `npm run build`
 5. **部署到Pages** - 将构建文件部署到GitHub Pages
 
+## 🔧 常见问题和解决方案
+
+### 错误：Get Pages site failed
+如果遇到此错误，请按以下步骤操作：
+
+1. **确保仓库设置正确**：
+   - 仓库必须是公开的（除非有GitHub Pro）
+   - 在Settings → Pages中正确配置
+
+2. **如果第一个workflow失败**：
+   - 删除 `.github/workflows/deploy.yml`
+   - 将 `deploy-simple.yml` 重命名为 `deploy.yml`
+   - 重新推送代码
+
+3. **检查权限**：
+   - 确保Actions有读写权限
+   - 在Settings → Actions → General中检查权限设置
+
+### 错误：GITHUB_TOKEN permissions
+1. 进入仓库Settings → Actions → General
+2. 在"Workflow permissions"中选择"Read and write permissions"
+3. 保存并重新运行workflow
+
 ## 📝 注意事项
 
 - 确保仓库是公开的（或者有GitHub Pro账户）
 - 首次部署可能需要几分钟时间
 - 更新后的部署通常在1-2分钟内完成
+- 如果部署失败，查看Actions页面的错误日志
 
 ## 🎯 访问您的应用
 
