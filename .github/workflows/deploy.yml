@@ -30,6 +30,7 @@ jobs:
         run: npm run build
         env:
           CI: false
+          PUBLIC_URL: /img2pdf
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
