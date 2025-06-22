@@ -2,6 +2,12 @@
 
 一个纯前端的图片转PDF工具，可以将多张图片合并成一个PDF文件，制作照片图册。
 
+## 🌐 在线体验
+
+**直接访问：[https://amoyens1s.github.io/img2pdf](https://amoyens1s.github.io/img2pdf)**
+
+无需安装，打开即用！完全在浏览器中运行，数据不上传服务器。
+
 ## 功能特点
 
 - ✅ 支持多种图片格式（JPG、PNG、GIF等）

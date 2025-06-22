@@ -1,6 +1,7 @@
 {
     "name": "image-to-pdf",
     "version": "0.1.0",
+    "description": "纯前端图片转PDF工具 - 在线体验: https://amoyens1s.github.io/img2pdf",
     "private": true,
     "homepage": "https://amoyens1s.github.io/img2pdf",
     "dependencies": {

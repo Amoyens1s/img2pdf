@@ -114,11 +114,13 @@ GitHub Actions工作流（`.github/workflows/deploy.yml`）包含：
 - 更新后的部署通常在1-2分钟内完成
 - 如果部署失败，查看Actions页面的错误日志
 
-## 🎯 访问您的应用
+## 🎯 访问应用
 
-部署成功后，您可以通过以下地址访问：
+部署成功后，可以通过以下地址访问：
 ```
-https://your-username.github.io/your-repo-name
+https://amoyens1s.github.io/img2pdf
 ```
+
+**🌐 当前在线地址：[https://amoyens1s.github.io/img2pdf](https://amoyens1s.github.io/img2pdf)**
 
 工具将完全在浏览器中运行，无需服务器！ 
