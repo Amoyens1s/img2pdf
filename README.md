@@ -56,4 +56,15 @@ src/
 - Chrome 60+
 - Firefox 60+
 - Safari 12+
-- Edge 79+ 
+- Edge 79+
+
+## 🚀 部署
+
+本项目支持GitHub Pages自动部署：
+
+1. Fork本仓库到您的GitHub账户
+2. 在仓库Settings → Pages中启用GitHub Actions
+3. 修改`package.json`中的`homepage`字段为您的GitHub Pages地址
+4. 推送代码即可自动部署
+
+详细部署说明请查看 [DEPLOY.md](DEPLOY.md) 
