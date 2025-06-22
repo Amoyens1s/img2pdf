@@ -19,12 +19,29 @@
 3. 在左侧菜单中找到 **Pages**
 4. 在 **Source** 下选择 **GitHub Actions**
 
-#### 方法二（如果方法一失败）：使用gh-pages分支
-1. 删除或重命名 `.github/workflows/deploy.yml`
-2. 将 `.github/workflows/deploy-simple.yml` 重命名为 `deploy.yml`
-3. 在仓库 **Settings** → **Pages** 中
-4. **Source** 选择 **Deploy from a branch**
-5. **Branch** 选择 **gh-pages** / **/ (root)**
+#### 推荐方法：使用简单部署
+由于第一个workflow有YAML语法问题，推荐使用简单部署方法：
+
+1. **删除有问题的workflow**：
+   ```bash
+   rm .github/workflows/deploy.yml
+   ```
+
+2. **将简单版本作为主要workflow**：
+   ```bash
+   mv .github/workflows/deploy-simple.yml .github/workflows/deploy.yml
+   ```
+
+3. **在仓库 Settings → Pages 中**：
+   - **Source** 选择 **Deploy from a branch**
+   - **Branch** 选择 **gh-pages** / **/ (root)**
+
+4. **推送更改**：
+   ```bash
+   git add .
+   git commit -m "使用简单部署方法"
+   git push origin main
+   ```
 
 ### 3. 推送代码触发部署
 ```bash
