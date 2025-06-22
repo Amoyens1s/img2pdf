@@ -71,10 +71,24 @@ GitHub Actions工作流（`.github/workflows/deploy.yml`）包含：
    - 确保Actions有读写权限
    - 在Settings → Actions → General中检查权限设置
 
-### 错误：GITHUB_TOKEN permissions
-1. 进入仓库Settings → Actions → General
-2. 在"Workflow permissions"中选择"Read and write permissions"
-3. 保存并重新运行workflow
+### 错误：GITHUB_TOKEN permissions 或 Permission denied
+如果遇到权限错误，请按以下步骤操作：
+
+1. **检查仓库Actions权限**：
+   - 进入仓库Settings → Actions → General
+   - 在"Workflow permissions"中选择"**Read and write permissions**"
+   - 勾选"**Allow GitHub Actions to create and approve pull requests**"
+   - 点击"Save"保存
+
+2. **如果还是失败，检查仓库设置**：
+   - 确保仓库是**公开的**（Private仓库需要GitHub Pro）
+   - 在Settings → Pages中确认已启用Pages
+
+3. **强制重新运行**：
+   ```bash
+   git commit --allow-empty -m "触发重新部署"
+   git push origin main
+   ```
 
 ## 📝 注意事项
 
